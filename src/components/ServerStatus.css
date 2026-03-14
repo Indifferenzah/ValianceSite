@@ -1,0 +1,99 @@
+.status-card { max-width: 640px; }
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.status-server-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--r-md);
+  background: var(--bg-5);
+  border: 1px solid var(--border-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--olive-300);
+  flex-shrink: 0;
+}
+.status-server-info { flex: 1; min-width: 0; }
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border-2);
+  background: var(--bg-4);
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+.status-indicator.online {
+  background: rgba(96,208,48,0.07);
+  border-color: rgba(96,208,48,0.25);
+  color: #80E050;
+}
+.status-indicator.offline {
+  background: rgba(180,60,60,0.07);
+  border-color: rgba(180,60,60,0.25);
+  color: #D07070;
+}
+
+.status-metrics {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.status-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.status-metric-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.status-metric-val {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-1);
+}
+
+.ip-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+.ip-copy-btn code {
+  font-size: 1.05rem;
+  color: var(--olive-100);
+}
+.ip-copy-btn svg { color: var(--text-3); }
+.ip-copy-btn:hover { opacity: 0.8; }
+
+.players-bar {
+  height: 3px;
+  background: var(--border-1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.players-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--olive-600), var(--olive-300));
+  border-radius: 2px;
+  transition: width 1s var(--ease-out);
+}

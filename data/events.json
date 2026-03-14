@@ -1,0 +1,13 @@
+[
+  {
+    "id": "1",
+    "title": "CW Interna",
+    "description": "Clan War tra i membri del clan. Allenamento settimanale obbligatorio.",
+    "type": "cw",
+    "recurring": true,
+    "recurring_days": ["Lunedì", "Mercoledì", "Venerdì"],
+    "recurring_time": "19:00",
+    "active": true,
+    "order_index": 0
+  }
+]

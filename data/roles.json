@@ -1,0 +1,6 @@
+[
+  { "id": "1", "name": "Founder",   "slug": "founder",   "color": "#B89A3A", "order_index": 0 },
+  { "id": "2", "name": "Co Leader", "slug": "co-leader", "color": "#8CB440", "order_index": 1 },
+  { "id": "3", "name": "Moderator", "slug": "moderator", "color": "#5A7828", "order_index": 2 },
+  { "id": "4", "name": "Helper",    "slug": "helper",    "color": "#3A5018", "order_index": 3 }
+]
