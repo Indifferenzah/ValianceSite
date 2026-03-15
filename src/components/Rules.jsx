@@ -1,14 +1,17 @@
+import { useState, useEffect } from 'react'
 import { useInView } from '../hooks/useInView'
 import './Rules.css'
-import rulesData from '../../data/rules.json'
-
-const RULES = rulesData
-  .filter(r => r.active)
-  .sort((a, b) => a.order_index - b.order_index)
-  .map(r => ({ title: r.title, desc: r.description, icon: r.icon }))
 
 export default function Rules() {
+  const [rules, setRules] = useState([])
   const [secRef, secInView] = useInView()
+
+  useEffect(() => {
+    fetch('/api/rules')
+      .then(r => r.json())
+      .then(res => setRules(res.data || []))
+      .catch(() => {})
+  }, [])
 
   return (
     <section id="rules" ref={secRef}>
@@ -23,9 +26,9 @@ export default function Rules() {
         </div>
 
         <div className="rules-grid">
-          {RULES.map((rule, i) => (
+          {rules.map((rule, i) => (
             <div
-              key={rule.title}
+              key={rule.id}
               className={`rule-item card reveal ${secInView ? 'visible' : ''}`}
               style={{ transitionDelay: `${(i % 4) * 0.08}s` }}
             >
@@ -35,7 +38,7 @@ export default function Rules() {
                   <span className="rule-icon">{rule.icon}</span>
                   <h3>{rule.title}</h3>
                 </div>
-                <p className="muted mt-1">{rule.desc}</p>
+                <p className="muted mt-1">{rule.description}</p>
               </div>
             </div>
           ))}

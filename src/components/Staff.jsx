@@ -1,28 +1,28 @@
 import { useState, useEffect } from 'react'
 import { useInView } from '../hooks/useInView'
 import './Staff.css'
-import staffData from '../../data/staff.json'
-import rolesData from '../../data/roles.json'
 
-const roleMap = Object.fromEntries(rolesData.map(r => [r.slug, r]))
-const groupsMap = {}
-staffData
-  .filter(m => m.active)
-  .forEach(m => {
-    const role = roleMap[m.role] || { name: m.role, color: '#888', textColor: '#aaa', order_index: 99 }
-    if (!groupsMap[m.role]) {
-      groupsMap[m.role] = { group: role.name, color: role.color, textColor: role.textColor, order: role.order_index, members: [] }
-    }
-    groupsMap[m.role].members.push({
-      discord_id: m.discord_id,
-      username: m.display_name,
-      role: m.bio || role.name,
-      order_index: m.order_index,
+function buildGroups(staffData, rolesData) {
+  const roleMap = Object.fromEntries(rolesData.map(r => [r.slug, r]))
+  const groupsMap = {}
+  staffData
+    .filter(m => m.active)
+    .forEach(m => {
+      const role = roleMap[m.role] || { name: m.role, color: '#888', textColor: '#aaa', order_index: 99 }
+      if (!groupsMap[m.role]) {
+        groupsMap[m.role] = { group: role.name, color: role.color, textColor: role.textColor, order: role.order_index, members: [] }
+      }
+      groupsMap[m.role].members.push({
+        discord_id: m.discord_id,
+        username: m.display_name,
+        role: m.bio || role.name,
+        order_index: m.order_index,
+      })
     })
-  })
-const STAFF_GROUPS = Object.values(groupsMap)
-  .sort((a, b) => a.order - b.order)
-  .map(g => ({ ...g, members: g.members.sort((a, b) => a.order_index - b.order_index) }))
+  return Object.values(groupsMap)
+    .sort((a, b) => a.order - b.order)
+    .map(g => ({ ...g, members: g.members.sort((a, b) => a.order_index - b.order_index) }))
+}
 
 function getDefaultAvatar(id) {
   try { return `https://cdn.discordapp.com/embed/avatars/${Number(BigInt(id) >> 22n) % 6}.png` }
@@ -77,8 +77,18 @@ function MemberCard({ member, groupColor, groupTextColor, onCopy, delay }) {
 }
 
 export default function Staff() {
+  const [groups, setGroups] = useState([])
   const [toast, setToast] = useState(false)
   const [secRef, secInView] = useInView()
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/api/staff').then(r => r.json()),
+      fetch('/api/staff-roles').then(r => r.json()),
+    ]).then(([staffRes, rolesRes]) => {
+      setGroups(buildGroups(staffRes.data, rolesRes.data))
+    }).catch(() => {})
+  }, [])
 
   function handleCopy() {
     setToast(true)
@@ -96,7 +106,7 @@ export default function Staff() {
           </p>
         </div>
 
-        {STAFF_GROUPS.map(group => (
+        {groups.map(group => (
           <div className="staff-group" key={group.group}>
             <div className="staff-group-header">
               <span className="staff-group-dot" style={{ background: group.color }} />

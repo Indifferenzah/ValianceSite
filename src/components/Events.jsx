@@ -1,13 +1,17 @@
+import { useState, useEffect } from 'react'
 import { useInView } from '../hooks/useInView'
 import './Events.css'
-import eventsData from '../../data/events.json'
-
-const EVENTS = eventsData
-  .filter(e => e.active)
-  .sort((a, b) => a.order_index - b.order_index)
 
 export default function Events() {
+  const [events, setEvents] = useState([])
   const [secRef, secInView] = useInView()
+
+  useEffect(() => {
+    fetch('/api/events')
+      .then(r => r.json())
+      .then(res => setEvents(res.data || []))
+      .catch(() => {})
+  }, [])
 
   return (
     <section id="events" ref={secRef}>
@@ -21,7 +25,7 @@ export default function Events() {
         </div>
 
         <div className="events-list">
-          {EVENTS.map((ev, i) => (
+          {events.map((ev, i) => (
             <div
               key={ev.id}
               className={`event-card card reveal reveal-delay-${i + 1} ${secInView ? 'visible' : ''}`}
@@ -39,7 +43,7 @@ export default function Events() {
               </div>
               <div className="event-schedule-col">
                 <div className="event-days">
-                  {ev.days.map(d => (
+                  {(ev.days || []).map(d => (
                     <span className="event-day condensed" key={d}>{d}</span>
                   ))}
                 </div>

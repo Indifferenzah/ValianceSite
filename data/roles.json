@@ -1,11 +1,74 @@
 [
-  { "id": "1", "name": "Founder",          "slug": "founder",     "color": "#DDB830", "textColor": "#F7E898", "order_index": 0 },
-  { "id": "2", "name": "Co Leader",        "slug": "co-leader",   "color": "#90CC40", "textColor": "#B2E060", "order_index": 1 },
-  { "id": "3", "name": "Senior Admin",     "slug": "sradmin",     "color": "#002AFF", "textColor": "#4466FF", "order_index": 2 },
-  { "id": "4", "name": "Admin",            "slug": "admin",       "color": "#9E6BFF", "textColor": "#B890FF", "order_index": 3 },
-  { "id": "5", "name": "Developer",        "slug": "dev",         "color": "#6A6868", "textColor": "#9A9898", "order_index": 4 },
-  { "id": "6", "name": "Senior Moderator", "slug": "srmoderator", "color": "#11806A", "textColor": "#20B090", "order_index": 5 },
-  { "id": "7", "name": "Moderator",        "slug": "moderator",   "color": "#5A9824", "textColor": "#90CC40", "order_index": 6 },
-  { "id": "8", "name": "Senior Helper",    "slug": "srhelper",    "color": "#CF2600", "textColor": "#FF5533", "order_index": 7 },
-  { "id": "9", "name": "Helper",           "slug": "helper",      "color": "#2A4A11", "textColor": "#72B42E", "order_index": 8 }
+  {
+    "id": "1",
+    "name": "Founder",
+    "slug": "founder",
+    "color": "#DDB830",
+    "textColor": "#F7E898",
+    "order_index": 0
+  },
+  {
+    "id": "2",
+    "name": "Co Leader",
+    "slug": "co-leader",
+    "color": "#90CC40",
+    "textColor": "#B2E060",
+    "order_index": 1
+  },
+  {
+    "id": "3",
+    "name": "Senior Admin",
+    "slug": "sradmin",
+    "color": "#002AFF",
+    "textColor": "#4466FF",
+    "order_index": 2
+  },
+  {
+    "id": "4",
+    "name": "Admin",
+    "slug": "admin",
+    "color": "#9E6BFF",
+    "textColor": "#B890FF",
+    "order_index": 3
+  },
+  {
+    "id": "5",
+    "name": "Developer",
+    "slug": "dev",
+    "color": "#6A6868",
+    "textColor": "#9A9898",
+    "order_index": 4
+  },
+  {
+    "id": "6",
+    "name": "Senior Moderator",
+    "slug": "srmoderator",
+    "color": "#11806A",
+    "textColor": "#20B090",
+    "order_index": 5
+  },
+  {
+    "id": "7",
+    "name": "Moderator",
+    "slug": "moderator",
+    "color": "#5A9824",
+    "textColor": "#90CC40",
+    "order_index": 6
+  },
+  {
+    "id": "8",
+    "name": "Senior Helper",
+    "slug": "srhelper",
+    "color": "#CF2600",
+    "textColor": "#FF5533",
+    "order_index": 7
+  },
+  {
+    "id": "9",
+    "name": "Helper",
+    "slug": "helper",
+    "color": "#2A4A11",
+    "textColor": "#72B42E",
+    "order_index": 8
+  }
 ]
