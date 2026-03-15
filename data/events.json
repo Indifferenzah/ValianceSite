@@ -1,13 +1,38 @@
 [
   {
     "id": "1",
-    "title": "CW Interna",
-    "description": "Clan War tra i membri del clan. Allenamento settimanale obbligatorio.",
-    "type": "cw",
-    "recurring": true,
-    "recurring_days": ["Lunedì", "Mercoledì", "Venerdì"],
-    "recurring_time": "19:00",
+    "type": "CW",
+    "title": "Clan War Interna",
+    "desc": "Allenamento settimanale tra i membri. 5v5 su mappe CW standard. Obbligatoria per tutti i membri attivi — è il nostro modo di affinare le strategie e valutare la forma del team.",
+    "days": ["Lun", "Mer", "Ven"],
+    "time": "19:00",
+    "color": "#90CC40",
+    "glow": "rgba(144,204,64,0.12)",
     "active": true,
     "order_index": 0
+  },
+  {
+    "id": "2",
+    "type": "PRATICA",
+    "title": "Sessione PvP Libera",
+    "desc": "Allenamento libero in PvP 1.8.9. Duelli, combo e meccaniche. Aperta a tutti i livelli — l'ideale per migliorare prima delle CW.",
+    "days": ["Sab", "Dom"],
+    "time": "17:00",
+    "color": "#DDB830",
+    "glow": "rgba(221,184,48,0.1)",
+    "active": true,
+    "order_index": 1
+  },
+  {
+    "id": "3",
+    "type": "TORNEO",
+    "title": "Torneo Mensile",
+    "desc": "Ogni primo sabato del mese organizziamo un torneo interno con premi in gioco. Elimina i tuoi compagni di clan e scala la classifica.",
+    "days": ["1° Sab del mese"],
+    "time": "20:00",
+    "color": "#72B42E",
+    "glow": "rgba(114,180,46,0.1)",
+    "active": true,
+    "order_index": 2
   }
 ]

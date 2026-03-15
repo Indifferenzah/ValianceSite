@@ -1,9 +1,9 @@
 [
-  { "id": "1", "title": "Rispetto",              "description": "Tratta tutti con rispetto. Niente insulti, discriminazioni o molestie.", "order_index": 0, "active": true },
-  { "id": "2", "title": "Niente spam",           "description": "Evita messaggi ripetuti, emoji in eccesso o tag inutili.", "order_index": 1, "active": true },
-  { "id": "3", "title": "Contenuti appropriati", "description": "Vietati contenuti NSFW, gore o illegali.", "order_index": 2, "active": true },
-  { "id": "4", "title": "Canali giusti",         "description": "Scrivi nei canali corretti e rispetta il tema di ciascuno.", "order_index": 3, "active": true },
-  { "id": "5", "title": "No pubblicità",         "description": "Non condividere link, server o social senza permesso dello staff.", "order_index": 4, "active": true },
-  { "id": "6", "title": "Sicurezza",             "description": "Non condividere dati personali e segnala comportamenti sospetti.", "order_index": 5, "active": true },
-  { "id": "7", "title": "Staff",                 "description": "Rispetta le decisioni dello staff. Se hai dubbi, apri un ticket.", "order_index": 6, "active": true }
+  { "id": "1", "title": "Rispetto",              "description": "Tratta ogni membro con rispetto, dentro e fuori dal gioco. Insulti, discriminazioni e molestie comportano segnalazione immediata allo staff.", "icon": "🤝", "order_index": 0, "active": true },
+  { "id": "2", "title": "Niente spam",           "description": "Evita messaggi ripetuti, flood di emoji o menzioni inutili. Mantieni le conversazioni pertinenti ai canali.", "icon": "🔇", "order_index": 1, "active": true },
+  { "id": "3", "title": "Contenuti appropriati", "description": "Vietati contenuti NSFW, gore, illegali o politicamente divisivi. Siamo una community di gioco — resta in topic.", "icon": "🛡️", "order_index": 2, "active": true },
+  { "id": "4", "title": "Canali giusti",         "description": "Usa i canali dedicati per ogni argomento. Le conversazioni fuori tema vanno in #generale — non intasare canali specifici.", "icon": "📌", "order_index": 3, "active": true },
+  { "id": "5", "title": "No pubblicità",         "description": "Non promuovere server Discord, canali social o prodotti senza approvazione dello staff. Eccezioni solo su richiesta.", "icon": "🚫", "order_index": 4, "active": true },
+  { "id": "6", "title": "Privacy e sicurezza",   "description": "Non condividere dati personali tuoi o altrui. Segnala immediatamente comportamenti sospetti o tentativi di phishing.", "icon": "🔒", "order_index": 5, "active": true },
+  { "id": "7", "title": "Rispetta lo Staff",     "description": "Le decisioni dello staff sono definitive. Per contestare una sanzione apri un ticket — non fare scene pubbliche.", "icon": "⚖️", "order_index": 6, "active": true }
 ]

@@ -1,10 +1,15 @@
 [
   { "id": "1", "discord_id": "810890907989049384",  "username": "GabriNumberOne", "display_name": "GabriNumberOne", "role": "founder",   "bio": "CW Organizer", "active": true, "order_index": 0 },
-  { "id": "2", "discord_id": "964986129491316847",  "username": "debbnotfound",   "display_name": "debbnotfound",   "role": "founder",   "bio": "",             "active": true, "order_index": 1 },
-  { "id": "3", "discord_id": "1123622103917285418", "username": "DrNooB_",        "display_name": "DrNooB_",        "role": "co-leader", "bio": "Main Dev",     "active": true, "order_index": 0 },
-  { "id": "4", "discord_id": "1375622684343537785", "username": "swityy",         "display_name": "swityy",         "role": "moderator", "bio": "",             "active": true, "order_index": 0 },
-  { "id": "5", "discord_id": "559053052150284298",  "username": "JustFr4",        "display_name": "JustFr4",        "role": "helper",    "bio": "CW Organizer", "active": true, "order_index": 0 },
-  { "id": "6", "discord_id": "1285924362242887715", "username": "spaventatoh_",   "display_name": "spaventatoh_",   "role": "helper",    "bio": "",             "active": true, "order_index": 1 },
-  { "id": "7", "discord_id": "943188659820191755",  "username": "Pellons",        "display_name": "Pellons",        "role": "helper",    "bio": "",             "active": true, "order_index": 2 },
-  { "id": "8", "discord_id": "1414139880006619156", "username": "SerenityCode",   "display_name": "SerenityCode",   "role": "helper",    "bio": "",             "active": true, "order_index": 3 }
+  { "id": "2", "discord_id": "964986129491316847",  "username": "debbnotfound",   "display_name": "debbnotfound",   "role": "founder",   "bio": "Discord Manager",             "active": true, "order_index": 1 },
+  { "id": "3", "discord_id": "1123622103917285418", "username": "indifferenzah",        "display_name": "Riluttante",        "role": "co-leader", "bio": "Dev & CW Organizer",     "active": true, "order_index": 0 },
+  { "id": "4", "discord_id": "1111308293302915244", "username": "will.hem",         "display_name": "NotOutSide_",         "role": "srmoderator", "bio": "",             "active": true, "order_index": 0 },
+  { "id": "5", "discord_id": "974683230559154209", "username": "elitk_",         "display_name": "EliTK_",         "role": "moderator", "bio": "",             "active": true, "order_index": 0 },
+  { "id": "6", "discord_id": "559053052150284298",  "username": "tumorega",        "display_name": "JustFr4 | Tumorega",        "role": "moderator",    "bio": "CW Organizer", "active": true, "order_index": 1 },
+  { "id": "7", "discord_id": "1462920415948050714", "username": "hikup9",   "display_name": "hikup9",   "role": "srhelper",    "bio": "",             "active": true, "order_index": 0 },
+  { "id": "8", "discord_id": "1141477880518430720", "username": "violenza_",   "display_name": "overcruel",   "role": "srhelper",    "bio": "",             "active": true, "order_index": 1 },
+  { "id": "9", "discord_id": "1274513439209029654",  "username": "mrtthomas",        "display_name": "MRTThomas22",        "role": "helper",    "bio": "",             "active": true, "order_index": 0 },
+  { "id": "10", "discord_id": "1414139880006619156", "username": "SerenityCode",   "display_name": "SerenityCode",   "role": "helper",    "bio": "",             "active": true, "order_index": 1 },
+  { "id": "11", "discord_id": "474546248167325706", "username": "melchio.",   "display_name": "Melchio",   "role": "helper",    "bio": "CW Organizer",             "active": true, "order_index": 2 },
+  { "id": "12", "discord_id": "1198001214076485772", "username": "amphetaminq",   "display_name": "Amphetaminq",   "role": "helper",    "bio": "",             "active": true, "order_index": 3 },
+  { "id": "13", "discord_id": "860539348490387466", "username": "rafim_10",   "display_name": "Rafim10",   "role": "helper",    "bio": "",             "active": true, "order_index": 4 }
 ]

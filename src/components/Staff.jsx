@@ -1,45 +1,28 @@
 import { useState, useEffect } from 'react'
 import { useInView } from '../hooks/useInView'
 import './Staff.css'
+import staffData from '../../data/staff.json'
+import rolesData from '../../data/roles.json'
 
-const STAFF_GROUPS = [
-  {
-    group: 'Founder',
-    color: '#DDB830',
-    textColor: '#F7E898',
-    members: [
-      { discord_id: '810890907989049384', username: 'GabriNumberOne', role: 'CW Organizer' },
-      { discord_id: '964986129491316847', username: 'debbnotfound',   role: 'Fondatore' },
-    ],
-  },
-  {
-    group: 'Co Leader',
-    color: '#90CC40',
-    textColor: '#B2E060',
-    members: [
-      { discord_id: '1123622103917285418', username: 'DrNooB_', role: 'Main Dev' },
-    ],
-  },
-  {
-    group: 'Moderator',
-    color: '#5A9824',
-    textColor: '#90CC40',
-    members: [
-      { discord_id: '1375622684343537785', username: 'swityy', role: 'Moderatore' },
-    ],
-  },
-  {
-    group: 'Helper',
-    color: '#2A4A11',
-    textColor: '#72B42E',
-    members: [
-      { discord_id: '559053052150284298',  username: 'JustFr4',      role: 'CW Organizer' },
-      { discord_id: '1285924362242887715', username: 'spaventatoh_', role: 'Helper' },
-      { discord_id: '943188659820191755',  username: 'Pellons',      role: 'Helper' },
-      { discord_id: '1414139880006619156', username: 'SerenityCode', role: 'Helper' },
-    ],
-  },
-]
+const roleMap = Object.fromEntries(rolesData.map(r => [r.slug, r]))
+const groupsMap = {}
+staffData
+  .filter(m => m.active)
+  .forEach(m => {
+    const role = roleMap[m.role] || { name: m.role, color: '#888', textColor: '#aaa', order_index: 99 }
+    if (!groupsMap[m.role]) {
+      groupsMap[m.role] = { group: role.name, color: role.color, textColor: role.textColor, order: role.order_index, members: [] }
+    }
+    groupsMap[m.role].members.push({
+      discord_id: m.discord_id,
+      username: m.display_name,
+      role: m.bio || role.name,
+      order_index: m.order_index,
+    })
+  })
+const STAFF_GROUPS = Object.values(groupsMap)
+  .sort((a, b) => a.order - b.order)
+  .map(g => ({ ...g, members: g.members.sort((a, b) => a.order_index - b.order_index) }))
 
 function getDefaultAvatar(id) {
   try { return `https://cdn.discordapp.com/embed/avatars/${Number(BigInt(id) >> 22n) % 6}.png` }

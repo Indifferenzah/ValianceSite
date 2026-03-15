@@ -1,38 +1,10 @@
 import { useInView } from '../hooks/useInView'
 import './Events.css'
+import eventsData from '../../data/events.json'
 
-const EVENTS = [
-  {
-    id: 1,
-    type: 'CW',
-    title: 'Clan War Interna',
-    desc: 'Allenamento settimanale tra i membri. 5v5 su mappe CW standard. Obbligatoria per tutti i membri attivi — è il nostro modo di affinare le strategie e valutare la forma del team.',
-    days: ['Lun', 'Mer', 'Ven'],
-    time: '19:00',
-    color: '#90CC40',
-    glow: 'rgba(144,204,64,0.12)',
-  },
-  {
-    id: 2,
-    type: 'PRATICA',
-    title: 'Sessione PvP Libera',
-    desc: 'Allenamento libero in PvP 1.8.9. Duelli, combo e meccaniche. Aperta a tutti i livelli — l\'ideale per migliorare prima delle CW.',
-    days: ['Sab', 'Dom'],
-    time: '17:00',
-    color: '#DDB830',
-    glow: 'rgba(221,184,48,0.1)',
-  },
-  {
-    id: 3,
-    type: 'TORNEO',
-    title: 'Torneo Mensile',
-    desc: 'Ogni primo sabato del mese organizziamo un torneo interno con premi in gioco. Elimina i tuoi compagni di clan e scala la classifica.',
-    days: ['1° Sab del mese'],
-    time: '20:00',
-    color: '#72B42E',
-    glow: 'rgba(114,180,46,0.1)',
-  },
-]
+const EVENTS = eventsData
+  .filter(e => e.active)
+  .sort((a, b) => a.order_index - b.order_index)
 
 export default function Events() {
   const [secRef, secInView] = useInView()

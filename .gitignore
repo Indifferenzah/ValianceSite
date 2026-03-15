@@ -4,3 +4,7 @@ TODO.md
 /node_modules/
 .vercel
 contact_cog.py
+/data/*
+.prettierrc
+data/staff.json
+data/roles.json
